@@ -336,9 +336,17 @@
             <a href="https://vimeo.com/channels/staffpicks/93951774"  data-fancybox class="templateux-block-play"><span class="ion-ios-play"></span></a>
           </div>
           <div class="col-lg-6 order-lg-1">
-            <h1 class="heading mb-3" data-aos="fade-up">Amelia - The Seamless Experience </h1>
-            <p class="lead mb-5" data-aos="fade-up"  data-aos-delay="100">Get your creditcard today and start shopping online instantly, praise be.</p>
-            <p data-aos="fade-up" data-aos-delay="200"><p onclick="toggleChatOverlay()" class="btn btn-primary py-3 px-4">Get Offer</p></p>
+            <h1 class="heading mb-3" data-aos="fade-up">XX</h1>!
+						<h1>Your new Virtual Credit Card <?php
+											 								if (isset($_GET['username'])) {
+											 				 					echo $_GET['username'];
+											 								} else {
+											 									// Fallback behaviour goes here
+											 								}
+											 								?>!
+														</h1>
+            <p class="lead mb-5" data-aos="fade-up"  data-aos-delay="100">XX</p>
+            
           </div>
 
         </div>
