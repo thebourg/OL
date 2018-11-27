@@ -180,78 +180,112 @@
 	<script>
 
 
-	function processUser()
-	  {
-	    var parameters = location.search.substring(1).split("&");
+		//Some stuff to remove leave message
 
-	    var temp = parameters[0].split("=");
-	    l = unescape(temp[1]);
-	    temp = parameters[1].split("=");
-	    p = unescape(temp[1]);
-	    document.getElementById("log").innerHTML = l;
-	    document.getElementById("pass").innerHTML = p;
-	  }
+		window.onbeforeunload = function() {
+				return true;
+		};
+		// Remove navigation prompt
+		window.onbeforeunload = null;
 
 
-		function openChatOverlay (receiverElem, imgElemOpen, imgElemClose) {
-			document.getElementById('receiver').classList.add("open");
-			document.getElementById('receiver').classList.remove("close");
-			document.getElementsByClassName('chat-overlay')[0].classList.add("chat-overlay-open");
-			document.getElementsByClassName('chat-overlay')[0].classList.remove("chat-overlay-closed");
-			document.getElementsByClassName('chat-overlay-header-mobile')[0].classList.remove('close');
-			imgElemClose.style.opacity = 1;
-			imgElemOpen.style.opacity = 0;
-			localStorage.setItem('chatOverlayOpen', true);
-		}
-
-		function closeChatOverlay (receiverElem, imgElemOpen, imgElemClose) {
-			document.getElementById('receiver').classList.add("close");
-			document.getElementById('receiver').classList.remove("open");
-			document.getElementsByClassName('chat-overlay')[0].classList.add("chat-overlay-closed");
-			document.getElementsByClassName('chat-overlay')[0].classList.remove("chat-overlay-open");
-			document.getElementsByClassName('chat-overlay-header-mobile')[0].classList.add('close');
-			imgElemOpen.style.opacity = 1;
-			imgElemClose.style.opacity = 0;
-			localStorage.setItem('chatOverlayOpen', false);
-		}
-
-		function toggleChatOverlay () {
-			/**
-			 * Toggles opening and closing of the chatOverlay
-			 * @returns - no return
-			 */
-			var chatOverlayHeaderImgElemOpen = document.getElementsByClassName('chat-overlay-header-img open')[0];
-			var chatOverlayHeaderImgElemClose = document.getElementsByClassName('chat-overlay-header-img close')[0];
-			var receiverElem = document.getElementById('receiver');
-			if (receiverElem.classList.contains('close')) {
-				openChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
-			} else {
-				closeChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
-			}
-		}
-
-		var chatOverlayHeaderElem = document.getElementsByClassName('chat-overlay-header')[0];
-		chatOverlayHeaderElem.addEventListener('click', toggleChatOverlay);
-		var chatOverlayHeaderElemMobile = document.getElementsByClassName('chat-overlay-header-mobile')[0];
-		chatOverlayHeaderElemMobile.addEventListener('click', toggleChatOverlay);
 
 
-		if (typeof(Storage) !== "undefined") {
-			var chatOverlayOpen = localStorage.getItem('chatOverlayOpen');
-			var chatOverlayHeaderImgElemOpen = document.getElementsByClassName('chat-overlay-header-img open')[0];
-			var chatOverlayHeaderImgElemClose = document.getElementsByClassName('chat-overlay-header-img close')[0];
-			var receiverElem = document.getElementById('receiver');
-			if (chatOverlayOpen && localStorage.getItem('chatOverlayOpen') !== "true") {
-				closeChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
-			} else {
-				openChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
-			}
-		} else {
-				// Sorry! No Web Storage support..
-			console.log('No localStorage support')
-		}
+		  function openChatOverlay (receiverElem, imgElemOpen, imgElemClose) {
+		    document.getElementById('receiver').classList.add("open");
+		    document.getElementById('receiver').classList.remove("close");
+		    document.getElementsByClassName('chat-overlay')[0].classList.add("chat-overlay-open");
+		    document.getElementsByClassName('chat-overlay')[0].classList.remove("chat-overlay-closed");
+		    document.getElementsByClassName('chat-overlay-header-mobile')[0].classList.remove('close');
+		    imgElemClose.style.opacity = 1;
+		    imgElemOpen.style.opacity = 0;
+		    localStorage.setItem('chatOverlayOpen', true);
+		  }
 
-	</script>
+		  function closeChatOverlay (receiverElem, imgElemOpen, imgElemClose) {
+		    document.getElementById('receiver').classList.add("close");
+		    document.getElementById('receiver').classList.remove("open");
+		    document.getElementsByClassName('chat-overlay')[0].classList.add("chat-overlay-closed");
+		    document.getElementsByClassName('chat-overlay')[0].classList.remove("chat-overlay-open");
+		    document.getElementsByClassName('chat-overlay-header-mobile')[0].classList.add('close');
+		    imgElemOpen.style.opacity = 1;
+		    imgElemClose.style.opacity = 0;
+		    localStorage.setItem('chatOverlayOpen', false);
+		  }
+
+		  function toggleChatOverlay () {
+		    /**
+		     * Toggles opening and closing of the chatOverlay
+		     * @returns - no return
+		     */
+		    var chatOverlayHeaderImgElemOpen = document.getElementsByClassName('chat-overlay-header-img open')[0];
+		    var chatOverlayHeaderImgElemClose = document.getElementsByClassName('chat-overlay-header-img close')[0];
+		    var receiverElem = document.getElementById('receiver');
+		    if (receiverElem.classList.contains('close')) {
+		      openChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
+		    } else {
+		      closeChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
+		    }
+		  }
+
+		  var chatOverlayHeaderElem = document.getElementsByClassName('chat-overlay-header')[0];
+		  chatOverlayHeaderElem.addEventListener('click', toggleChatOverlay);
+		  var chatOverlayHeaderElemMobile = document.getElementsByClassName('chat-overlay-header-mobile')[0];
+		  chatOverlayHeaderElemMobile.addEventListener('click', toggleChatOverlay);
+
+
+		  if (typeof(Storage) !== "undefined") {
+		    var chatOverlayOpen = localStorage.getItem('chatOverlayOpen');
+		    var chatOverlayHeaderImgElemOpen = document.getElementsByClassName('chat-overlay-header-img open')[0];
+		    var chatOverlayHeaderImgElemClose = document.getElementsByClassName('chat-overlay-header-img close')[0];
+		    var receiverElem = document.getElementById('receiver');
+		    if (chatOverlayOpen && localStorage.getItem('chatOverlayOpen') !== "true") {
+		      closeChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
+		    } else {
+		      openChatOverlay(receiverElem, chatOverlayHeaderImgElemOpen, chatOverlayHeaderImgElemClose);
+		    }
+		  } else {
+		      // Sorry! No Web Storage support..
+		    console.log('No localStorage support')
+		  }
+
+			function receiveMessage(e, data) {
+					/**
+					 * Receive message from child frame and update the DOM
+					 * @param {Object} data - data used to update the DOM
+					 * @returns - no return
+					 */
+					// Check to make sure that this message came from the correct domain.
+
+					var url = e.data.url;
+					//Ändras ej vid flytt till web
+					if (e.origin !== 'https://ipsoft-amelia-demodeveu-v3.ipsoft.com')
+						return;
+
+					 if (e.data.action === "checkout" && e.data.additionalData)
+					 {
+							//window.location.href = "http://localhost:8000/Documents/AmeliawithMA/Templates/seb/privat/betala/kort/login.html"; //+ e.data.additionalData;
+							window.location.href = "https://hostedsite.herokuapp.com/virtual_card.php?&data=" + e.data.additionalData;
+					}
+				}
+
+				function sendMessage(data) {
+					/**
+					 * Use data object and postMessage to URL provided (postMessage to child frame)
+					 * @param {Object} data - data to be sent to url provided of child frame
+					 * @returns - no return
+					 */
+
+					var receiverElem = document.getElementById('receiver').contentWindow;
+					receiverElem.postMessage(data, "https://hostedsite.herokuapp.com/login.html");
+				}
+			window.addEventListener('message', receiveMessage);
+			//document.write(data);
+			//document.write("test");
+
+
+
+		</script>
 
 
   <div class="js-animsition animsition" id="site-wrap" data-animsition-in-class="fade-in" data-animsition-out-class="fade-out">
