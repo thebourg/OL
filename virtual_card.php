@@ -4,147 +4,210 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Amelia &mdash; The Credit Card Provider</title>
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-
-	<style>
-	.chat-overlay {
-	position: fixed;
-	width: 376px;
-	height: 500px;
-	bottom: 24px;
-	right: 24px;
-	z-index: 90;
-	}
-
-	.chat-overlay-open {
-		height: 512px;
-	}
-
-	.chat-overlay-closed {
-		height: 78px;
-
-	}
-
-	.chat-overlay-wrapper {
-	width: 376px;
-	height: 448px;
-	}
-
-	.chat-overlay-header-mobile {
-		display: none;
-	}
-
-	.chat-overlay-header {
-	position: relative;
-	height: 56px;
-	width: 56px;
-	border: 1px solid black;
-	background: #000;
-	margin-left: auto;
-	border-radius: 50%;
-	box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5);
-	}
-
-	#receiver {
-	transition: opacity 1s ease-in-out;
-	opacity: 1;
-	background: rgba(0, 0, 0, 0.5);
-	box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5);
-	border-radius: 0.5rem;
-	}
-
-	#receiver.close {
-	height: 0;
-	opacity: 0;
-	overflow: hidden;
-	}
-
-	#receiver.open {
-	height: 100%;
-	opacity: 1;
-	overflow: hidden;
-	}
-
-	.chat-overlay-header-img {
-	position: absolute;
-	max-width: 14px;
-	max-height: 14px;
-	transition: opacity 1s ease-in-out;
-	opacity: 1;
-	right: 0px;
-	left: 0px;
-	top: 0px;
-	bottom: 0px;
-	margin: auto;
-	}
-
-	.chat-overlay-header-img.open {
-	opacity: 0;
-	}
-
-	.absolute-cart-box {
-	display: none;
-	}
-
-	@media only screen and (max-width: 768px) {
-	.chat-overlay {
-		width: 100%;
+		<style>
+		.chat-overlay {
 		position: fixed;
-		height: 100%;
-	}
+		width: 376px;
+		height: 500px;
+		bottom: 24px;
+		right: 24px;
+		z-index: 90;
+		}
 
-	.chat-overlay-header-mobile {
-		display: flex;
-		width: inherit;
-		height: 9%;
-		background: #4d5aff;
-	}
+		.chat-overlay-open {
+			height: 512px;
+		}
 
-	.chat-overlay-header-mobile img {
-		height: 30%;
-		padding: 1rem;
+		.chat-overlay-closed {
+			height: 78px;
+
+		}
+
+		.chat-overlay-wrapper {
+		width: 376px;
+		height: 448px;
+		}
+
+		.chat-overlay-header-mobile {
+			display: none;
+		}
+
+		.chat-overlay-header {
+		position: relative;
+		height: 56px;
+		width: 56px;
+		border: 1px solid black;
+		background: #000;
 		margin-left: auto;
-	}
+		border-radius: 50%;
+		box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5);
+		}
 
-	.chat-overlay-header-mobile.close {
-		display: none;
-	}
+		#receiver {
+		transition: opacity 1s ease-in-out;
+		opacity: 1;
+		background: rgba(0, 0, 0, 0.5);
+		box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5);
+		border-radius: 0.5rem;
+		}
 
-	#receiver {
-		border-radius: 0;
-	}
-
-	#receiver.close {
+		#receiver.close {
 		height: 0;
 		opacity: 0;
 		overflow: hidden;
-	}
+		}
 
-	#receiver.open {
-		height: 91%;
+		#receiver.open {
+		height: 100%;
 		opacity: 1;
 		overflow: hidden;
-	}
+		}
 
-	.chat-overlay-open {
-		height: 100%;
-		bottom: 0px;
+		.chat-overlay-header-img {
+		position: absolute;
+		max-width: 14px;
+		max-height: 14px;
+		transition: opacity 1s ease-in-out;
+		opacity: 1;
 		right: 0px;
+		left: 0px;
+		top: 0px;
+		bottom: 0px;
+		margin: auto;
 		}
 
-	.chat-overlay-closed {
-				height: 70px;
-		bottom: 24px;
-		right: 24px;
+		.chat-overlay-header-img.open {
+		opacity: 0;
 		}
 
-	.chat-overlay-wrapper {
-		width: 100%;
-		height: 100%;
-	}
-	}
-	</style>
+		.absolute-cart-box {
+		display: none;
+		}
+
+		@media only screen and (max-width: 768px) {
+		.chat-overlay {
+			width: 100%;
+			position: fixed;
+			height: 100%;
+		}
+
+		.chat-overlay-header-mobile {
+			display: flex;
+			width: inherit;
+			height: 9%;
+			background: #4d5aff;
+		}
+
+		.chat-overlay-header-mobile img {
+			height: 30%;
+			padding: 1rem;
+			margin-left: auto;
+		}
+
+		.chat-overlay-header-mobile.close {
+			display: none;
+		}
+
+		#receiver {
+			border-radius: 0;
+		}
+
+		#receiver.close {
+			height: 0;
+			opacity: 0;
+			overflow: hidden;
+		}
+
+		#receiver.open {
+			height: 91%;
+			opacity: 1;
+			overflow: hidden;
+		}
+
+		.chat-overlay-open {
+			height: 100%;
+			bottom: 0px;
+			right: 0px;
+			}
+
+		.chat-overlay-closed {
+					height: 70px;
+			bottom: 24px;
+			right: 24px;
+			}
+
+		.chat-overlay-wrapper {
+			width: 100%;
+			height: 100%;
+		}
+
+
+}
+
+.contaminate {
+position: relative;
+text-align: center;
+color: white;
+}
+
+.bottom-left {
+																			    position: absolute;
+																			    bottom: 140px;
+																			    left: 35px;
+																					color: white;
+																			}
+																			.bottom-left-2 {
+																			    position: absolute;
+																			    bottom: 120px;
+																			    left: 35px;
+																					color: white;
+																			}
+																			.bottom-left-3 {
+																			    position: absolute;
+																			    bottom: 105px;
+																			    left: 35px;
+																					font-size: 12px;
+																					color: white;
+																			}
+																			.top-right {
+																			    position: absolute;
+																			    top: 180px;
+																			    left: 220px;
+																					font-weight: bold;
+																					font-size: 22px;
+																					color: white;
+																			}
+																			.top-left {
+																			    position: absolute;
+																			    top: 225px;
+																			    right: -130px;
+																					font-size: 13px;
+																					color: black;
+																			}
+																			.top-left-2 {
+																			    position: absolute;
+																			    top: 180px;
+																			    right: 80px;
+																					font-weight: bold;
+																					font-size: 7px;
+																					color: white;
+																			}
+
+																			.bottom-left-4 {
+																					position: absolute;
+																					bottom: 85px;
+																					right: -130px;
+																					font-size: 10px;
+																					color: white;
+
+																			}
+
+
+		</style>
+  </head>
+  <body>
+
+
 <div class="chat-overlay">
 	  <div class="chat-overlay-wrapper">
 	        <div class="chat-overlay-header-mobile">
@@ -332,24 +395,53 @@
     <div class="templateux-cover" style="background-image: url(images/slider-1.jpg);">
       <div class="container">
         <div class="row align-items-lg-center">
-          <div class="col-lg-6 text-center order-lg-2">
-            <a href="https://vimeo.com/channels/staffpicks/93951774"  data-fancybox class="templateux-block-play"><span class="ion-ios-play"></span></a>
-          </div>
+
+
+
           <div class="col-lg-6 order-lg-1">
-            <h1 class="heading mb-3" data-aos="fade-up">XX</h1>!
-						<h1>Your new Virtual Credit Card <?php
-											 								if (isset($_GET['username'])) {
-											 				 					echo $_GET['username'];
+            <h1 class="heading mb-3" data-aos="fade-up">XX</h1>
+						<h2>Your new Virtual Credit Card <?php
+											 								if (isset($_GET['data'])) {
+											 				 					echo $_GET['data'];
 											 								} else {
 											 									// Fallback behaviour goes here
 											 								}
 											 								?>!
-														</h1>
+						</h2>
+						<div class="contanimate"> <img src="credit_card<?php
+													if (isset($_GET['data'])) {
+														echo $_GET['data'];
+													} else {
+														// Fallback behaviour goes here
+													}
+													?>.gif" height="200" width="710">
+													<div class="bottom-left">5581			 4691			4151			1721 </div>
+													<div class="top-right">Credit Card</div>
+													<div class="top-left">3124 689</div>
+													<div class="top-left-2">www.card.com - 555 111 478 </div>
+													<div class="bottom-left-4">Credit Card </div>
+													<div class="bottom-left-2">Master Card <?php
+														if (isset($_GET['data'])) {
+																echo $_GET['data'];
+																} else {
+					// Fallback behaviour goes here
+																}
+												?></div>
+												<div class="bottom-left-3">Exp date  12/21</div>
+
+
+							</div>
+
+
+
+
+
             <p class="lead mb-5" data-aos="fade-up"  data-aos-delay="100">XX</p>
-            
+
           </div>
 
         </div>
+
       </div>
     </div> <!-- .templateux-cover -->
 
