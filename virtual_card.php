@@ -171,7 +171,7 @@ color: white;
 																			}
 																			.top-right {
 																			    position: absolute;
-																			    top: 180px;
+																			    top: 150px;
 																			    left: 220px;
 																					font-weight: bold;
 																					font-size: 22px;
@@ -179,14 +179,15 @@ color: white;
 																			}
 																			.top-left {
 																			    position: absolute;
-																			    top: 225px;
+																			    top: 190px;
 																			    right: -130px;
+
 																					font-size: 13px;
 																					color: black;
 																			}
 																			.top-left-2 {
 																			    position: absolute;
-																			    top: 180px;
+																			    top: 145px;
 																			    right: 80px;
 																					font-weight: bold;
 																					font-size: 7px;
@@ -201,6 +202,15 @@ color: white;
 																					color: white;
 
 																			}
+																			h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+
+}
 
 
 		</style>
