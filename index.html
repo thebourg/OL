@@ -152,45 +152,10 @@
 
 
 
-<!-- Do not use
-	<div class="chat-overlay">
-	  <div class="chat-overlay-wrapper">
-	        <div class="chat-overlay-header-mobile">
-	        <img class="close" src="close.png" alt="toggle chat overlay" />
-	      </div>
-	      <iframe id="receiver" src="https://ipsoft-amelia-demodeveu-v3.ipsoft.com/Amelia/ui/TheBankExperience/login?embed=iframe&domainCode=sweden&processName=CreditCardGreeting" frameborder="0" width="100%" height="100%" allow="geolocation; microphone; camera">
-	        <p>Your browser does not support iframes.</p>
-	      </iframe>
-	      <div class="chat-overlay-header">
-	        <img class="chat-overlay-header-img close" src="close.png" alt="toggle chat overlay" />
-	        <img class="chat-overlay-header-img open" src="icon.png" alt="toggle chat overlay" />
-	      </div>
-	  </div>
-	</div>
+
+
 	<script>
--->
 
-		function openChatOverlay (receiverElem, imgElemOpen, imgElemClose) {
-			document.getElementById('receiver').classList.add("open");
-			document.getElementById('receiver').classList.remove("close");
-			document.getElementsByClassName('chat-overlay')[0].classList.add("chat-overlay-open");
-			document.getElementsByClassName('chat-overlay')[0].classList.remove("chat-overlay-closed");
-			document.getElementsByClassName('chat-overlay-header-mobile')[0].classList.remove('close');
-			imgElemClose.style.opacity = 1;
-			imgElemOpen.style.opacity = 0;
-			localStorage.setItem('chatOverlayOpen', true);
-		}
-
-		function closeChatOverlay (receiverElem, imgElemOpen, imgElemClose) {
-			document.getElementById('receiver').classList.add("close");
-			document.getElementById('receiver').classList.remove("open");
-			document.getElementsByClassName('chat-overlay')[0].classList.add("chat-overlay-closed");
-			document.getElementsByClassName('chat-overlay')[0].classList.remove("chat-overlay-open");
-			document.getElementsByClassName('chat-overlay-header-mobile')[0].classList.add('close');
-			imgElemOpen.style.opacity = 1;
-			imgElemClose.style.opacity = 0;
-			localStorage.setItem('chatOverlayOpen', false);
-		}
 
 		function toggleChatOverlay () {
 			/**
